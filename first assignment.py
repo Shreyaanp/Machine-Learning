@@ -65,13 +65,6 @@ mutual_info.sort_values(ascending=False)
 mutual_info.plot.bar(figsize=(20, 8))
 plt.show()
 
-#perform chi square test on the feature scaling
-chi_scores = chi2(abs(Xsc_train), y_train)
-p_values = pd.Series(chi_scores[1], index=X_train.columns)
-p_values.sort_values(ascending=False, inplace=True)
-p_values.plot.bar(figsize=(20, 8))
-plt.show()
-
 
 # apply pearson corelation with the dataset
 corr = dataset.corr(method='pearson')
